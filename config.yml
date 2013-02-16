@@ -22,16 +22,14 @@ tasks:
     rlslog: http://www.rlslog.net/category/movies/dvdrip/
     imdb:
       min_score: 6.1
-      min_votes: 5000
+      min_votes: 3000
       min_year: 2012
       reject_genres:
-        - horror
         - documentary
         - musical
         - music
         - biography
-        - drama
-        - love
+        - romance
     transmission:
       host: localhost
       port: 9091
