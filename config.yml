@@ -1,0 +1,37 @@
+presets:
+  tv:
+    transmission:
+      host: localhost
+      port: 9091
+      removewhendone: True
+    exists_series: /mnt/extstorage/downloads/
+    series:
+      - The Big Bang Theory
+
+tasks:
+
+  showrss:
+    rss: http://showrss.karmorra.info/feeds/all.rss
+    preset: tv
+
+  rb-chat:
+    rss: http://rss.bt-chat.com/?group=3
+    preset: tv
+
+  rlslog_dvdrips:
+    rlslog: http://www.rlslog.net/category/movies/dvdrip/
+    imdb:
+      min_score: 6.1
+      min_votes: 5000
+      min_year: 2012
+      reject_genres:
+        - horror
+        - documentary
+        - musical
+        - music
+        - biography
+        - drama
+        - love
+    transmission:
+      host: localhost
+      port: 9091
