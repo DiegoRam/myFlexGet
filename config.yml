@@ -7,6 +7,18 @@ presets:
     exists_series: /mnt/extstorage/downloads/
     series:
       - The Big Bang Theory
+      - The Game of Thrones
+      - American Dad
+      - Family Guy
+email:
+  from: ddarkheart@gmail.com
+  to: diego@diegoram.me
+  smtp_host: smtp.gmail.com
+  smtp_port: 587
+  smtp_username: 'xxxxxx'
+  smtp_password: 'xxxxxxx'
+  smtp_tls: yes
+  template: accepted
 
 tasks:
 
@@ -21,9 +33,9 @@ tasks:
   rlslog_dvdrips:
     rlslog: http://www.rlslog.net/category/movies/dvdrip/
     imdb:
-      min_score: 6.1
-      min_votes: 3000
-      min_year: 2012
+      min_score: 4.5
+      min_votes: 1000
+      min_year: 2010
       reject_genres:
         - documentary
         - musical
