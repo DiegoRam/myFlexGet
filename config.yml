@@ -1,35 +1,40 @@
-presets:
+templates:
   tv:
     transmission:
       host: localhost
       port: 9091
-      removewhendone: True
-    exists_series: /mnt/extstorage/downloads/
+    exists_series: /media/hd/downloads/
     series:
       - The Big Bang Theory
-      - The Game of Thrones
-      - American Dad
-      - Family Guy
+      - Game of Thrones
+      - Hannibal
+      - 24
+      - The Walking Dead
+      - True Detective
 email:
   from: ddarkheart@gmail.com
   to: diego@diegoram.me
   smtp_host: smtp.gmail.com
   smtp_port: 587
-  smtp_username: 'xxxxxx'
-  smtp_password: 'xxxxxxx'
+  smtp_username: 'XXXX'
+  smtp_password: 'XXXXX'
   smtp_tls: yes
   template: accepted
 
 tasks:
 
-  showrss:
-    rss: http://showrss.karmorra.info/feeds/all.rss
-    preset: tv
-
   rb-chat:
     rss: http://rss.bt-chat.com/?group=3
-    preset: tv
-
+    template: tv
+  torrentz:
+    rss: http://torrentz.eu/feed
+    template: tv
+  extratorrent:
+    rss: http://extratorrent.cc/rss.xml?cid=8
+    template: tv
+  feedburner:
+    rss: http://feeds.feedburner.com/eztv-rss-atom-feeds?format=xml
+    template: tv
   rlslog_dvdrips:
     rlslog: http://www.rlslog.net/category/movies/dvdrip/
     imdb:
@@ -45,3 +50,17 @@ tasks:
     transmission:
       host: localhost
       port: 9091
+
+  subtitles:
+    find:
+      path: 
+        - /media/hd/downloads/
+      regexp: '.*\.(avi|mkv|mp4)$'
+      recursive: yes
+    accept_all: yes
+    periscope:
+      languages:
+        - es
+      alternatives:
+        - en
+      overwrite: yes
